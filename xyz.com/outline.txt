@@ -1,0 +1,19 @@
+create the remote project repo
+env
+    .prettierrc
+    .editorconfig
+    .gitignore
+    readme.md
+
+HTML
+    create Home/Shop Page
+    create Cart Page
+    create Error Pages
+    create About Page
+    create Contact Us Page
+CSS
+    style all pages
+
+Javascript
+    use ajax to eliminate page refreshes on the cart page
+    use javascript for form validation
