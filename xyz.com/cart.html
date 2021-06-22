@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XYZ Corporation</title>
+    <script src="js/cart.js" defer></script>
 </head>
 
 <body>
@@ -19,13 +20,34 @@
     </header>
     <main>
         <h1>Your Cart</h1>
-        <section id="cart">
-            cart placeholder
+        <section data-cart>
+            <section data-cart-items></section>
         </section>
     </main>
     <footer>
         &copy;2021 XYZ Corp. all rights reserved
     </footer>
+    <template data-cart-item-template>
+        <div data-cart-item>
+
+            <div>id: 
+                <span data-id></span>
+            </div>
+            <div>
+                name: <span data-name></span>
+            </div>
+            <div>
+                price: <span data-price></span>
+            </div>
+            <div>
+                qty: <span data-qty></span>
+            </div>
+            <button data-btn-qty-inc>+</button>
+            <button data-btn-qty-dec>-</button>
+            <button data-btn-remove-from-cart>x</button>
+        </div>
+    </template>
+
 </body>
 
 </html>
