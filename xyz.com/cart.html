@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XYZ Corporation</title>
+    <link rel="stylesheet" href="main.css" />
     <script src="js/cart.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="./index.html">
-            <h1>XYZ Corporation</h1>
-        </a>
-        <nav>
-            <a href="#" class="active">Cart</a>
-        </nav>
+      <a href="#"><h1>XYZ Corporation</h1></a>
+      <nav>
+        <a href="./cart.html">Cart</a>
+        <li data-cart-count></li>
+      </nav>
     </header>
     <main>
-        <h1>Your Cart <span data-cart-subtotal>0.00</span> (Items: <span data-cart-items-count>0</span>)</h1>
-        <section data-cart>
-            <section data-cart-items></section>
-            <a href="checkout.html">Checkout</a>
-        </section>
+      <h1 class="page-name">
+        Your Cart <span data-cart-subtotal>0.00</span> (Items:
+        <span data-cart-items-count>0</span>)
+      </h1>
+      <section data-cart>
+        <section data-cart-items></section>
+        <a href="checkout.html">Checkout</a>
+      </section>
     </main>
-    <footer>
-        &copy;2021 XYZ Corp. all rights reserved
-    </footer>
     <template data-cart-item-template>
-        <div data-cart-item>
-
-            <div>id: 
-                <span data-id></span>
-            </div>
+      <div data-cart-item class="cart-card">
+        <div class="cart-card-left">
+          <div>
+            <img
+              class="cart-img"
+              src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+              alt=""
+            />
+          </div>
+          <div class="cart-card-left-info">
             <div>
-                name: <span data-name></span>
+              id:
+              <span data-id></span>
             </div>
-            <div>
-                price: <span data-price></span>
-            </div>
-            <div>
-                qty: <span data-qty></span>
-            </div>
+            <div>name: <span data-name></span></div>
+            <div>price: <span data-price></span></div>
+          </div>
+        </div>
+        <div class="cart-card-right">
+          <div>qty: <span data-qty></span></div>
+          <div>
             <button data-btn-qty-inc>+</button>
             <button data-btn-qty-dec>-</button>
             <button data-btn-remove-from-cart>x</button>
+          </div>
         </div>
+      </div>
     </template>
-
-</body>
-
+    <footer>&copy; 2021 XYZ Corp. all rights reserved</footer>
+  </body>
 </html>
