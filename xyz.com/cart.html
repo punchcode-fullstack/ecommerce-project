@@ -14,6 +14,7 @@
       <a href="#"><h1>XYZ Corporation</h1></a>
       <nav>
         <a href="./cart.html">Cart</a>
+        <li data-cart-count></li>
       </nav>
     </header>
     <main>
@@ -30,11 +31,20 @@
       <div data-cart-item class="cart-card">
         <div class="cart-card-left">
           <div>
-            id:
-            <span data-id></span>
+            <img
+              class="cart-img"
+              src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+              alt=""
+            />
           </div>
-          <div>name: <span data-name></span></div>
-          <div>price: <span data-price></span></div>
+          <div class="cart-card-left-info">
+            <div>
+              id:
+              <span data-id></span>
+            </div>
+            <div>name: <span data-name></span></div>
+            <div>price: <span data-price></span></div>
+          </div>
         </div>
         <div class="cart-card-right">
           <div>qty: <span data-qty></span></div>

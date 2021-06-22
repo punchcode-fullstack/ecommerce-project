@@ -52,7 +52,7 @@ main {
 .product-card-right {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .product-card-right div {
@@ -82,6 +82,10 @@ button:hover {
   cursor: pointer;
 }
 
+button:active {
+  transform: scale(1.25);
+}
+
 footer {
   position: absolute;
   bottom: 2rem;
@@ -101,4 +105,19 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.cart-img {
+  height: 100%;
+  width: 8rem;
+  border: 1px solid red;
+  margin-right: 24px;
+}
+
+.cart-card-left {
+  display: flex;
+}
+
+.cart-card-left-info {
+  margin: auto 0;
 }
