@@ -50,15 +50,20 @@ function renderCartItems(){
             container.querySelector('[data-qty]').textContent = item.qty
             cartItemsElement.append(container)
         })
+
+        const btnsQtyIncrement = document.querySelectorAll('[data-btn-qty-inc')
+        const btnsQtyDecrement = document.querySelectorAll('[data-btn-qty-dec')
+        const btnsRemoveFromCart = document.querySelectorAll('[data-btn-remove-from-cart')
+
         // remove existing event handlers to prevent memory leaks
-        document.querySelectorAll('[data-btn-qty-inc').forEach(btn => btn.removeEventListener('click', incrementQty))
-        document.querySelectorAll('[data-btn-qty-dec').forEach(btn => btn.removeEventListener('click', decrementQty))
-        document.querySelectorAll('[data-btn-remove-from-cart').forEach(btn => btn.removeEventListener('click', removeFromCart))
+        btnsQtyIncrement.forEach(btn => btn.removeEventListener('click', incrementQty))
+        btnsQtyDecrement.forEach(btn => btn.removeEventListener('click', decrementQty))
+        btnsRemoveFromCart.forEach(btn => btn.removeEventListener('click', removeFromCart))
         
         // add event handlers
-        document.querySelectorAll('[data-btn-qty-inc').forEach(btn => btn.addEventListener('click', incrementQty))
-        document.querySelectorAll('[data-btn-qty-dec').forEach(btn => btn.addEventListener('click', decrementQty))
-        document.querySelectorAll('[data-btn-remove-from-cart').forEach(btn => btn.addEventListener('click', removeFromCart))
+        btnsQtyIncrement.forEach(btn => btn.addEventListener('click', incrementQty))
+        btnsQtyDecrement.forEach(btn => btn.addEventListener('click', decrementQty))
+        btnsRemoveFromCart.forEach(btn => btn.addEventListener('click', removeFromCart))
 
         document.querySelector('[data-cart-items-count]').textContent = Object.keys(items).length
         const subtotal = calculateCart()
@@ -87,6 +92,8 @@ function removeFromCart(e){
     saveCart()
     renderCartItems()
 }
+
+
 document.querySelectorAll('[data-btn-add-to-cart]').forEach(btn => btn.addEventListener('click', addToCart))
 
 const cartItemsElement = document.querySelector('[data-cart-items]')
