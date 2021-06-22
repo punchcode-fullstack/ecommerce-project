@@ -1,12 +1,6 @@
-// {
-    // [id]: {
-    //     id: 1,
-    //     name: 'Item 1',
-    //     price: 1111,
-    //     qty: 1,
-    // },
-// }
 let items
+
+
 try{
     items = JSON.parse(localStorage.getItem('items')) ?? {}
 }catch(e){
