@@ -15,6 +15,16 @@ try{
 function isItemInCart(itemId){
     return Object.keys(items).includes(itemId)
 }
+function calculateCart(){
+    const subtotal =  Object.values(items).reduce((total, item) => {
+        const price = parseInt(item.price.replace('.', ''), 10)
+        const qty = parseInt(item.qty, 10)
+
+        return total + price * qty
+    }, 0)
+    return subtotal / 100
+}
+
 function saveCart(){
     localStorage.setItem('items', JSON.stringify(items))
 }
@@ -49,6 +59,10 @@ function renderCartItems(){
         document.querySelectorAll('[data-btn-qty-inc').forEach(btn => btn.addEventListener('click', incrementQty))
         document.querySelectorAll('[data-btn-qty-dec').forEach(btn => btn.addEventListener('click', decrementQty))
         document.querySelectorAll('[data-btn-remove-from-cart').forEach(btn => btn.addEventListener('click', removeFromCart))
+
+        document.querySelector('[data-cart-items-count]').textContent = Object.keys(items).length
+        const subtotal = calculateCart()
+        document.querySelector('[data-cart-subtotal]').textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal);
     }
 }
 function decrementQty(e){
